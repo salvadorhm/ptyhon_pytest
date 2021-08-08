@@ -12,6 +12,9 @@ class Index:
 
 class Dato:
     def GET(self):
+        return 'Hello, world!'
+
+    def POST(self):
         form = web.input()
         print(form.name)
         return 'Hello, ' +  form.name + '!'
