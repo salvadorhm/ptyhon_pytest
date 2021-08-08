@@ -5,3 +5,6 @@
 ```bash
 pytest
 ```
+
+
+## Pytest disabled warnings
