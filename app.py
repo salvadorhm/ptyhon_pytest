@@ -1,18 +1,22 @@
 import web
+import login
 
 urls = (
     '/index', 'Index',
-    '/dato','Dato'
+    '/dato','Dato',
+    '/login','login.Login',
 )
 app = web.application(urls, globals())
 
+render = web.template.render('templates')
+
 class Index:
     def GET(self):
-        return 'Hello, world!'
+        return render.index()
 
 class Dato:
     def GET(self):
-        return 'Hello, world!'
+        return render.index()
 
     def POST(self):
         form = web.input()

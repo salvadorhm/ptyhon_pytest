@@ -3,22 +3,24 @@ from app import app as application
 
 class TestIndex():
     def test_get(self):
+        file = open('templates/index.html', 'r')
         middleware = []
         app = ta(application.wsgifunc(*middleware))
         resp = app.get('/index')
         print(resp)
         assert resp.status == '200 OK'
-        assert resp.text == 'Hello, world!'
+        assert resp.text ==  file.read() + "\n"
 
 class TestDato():
 
     def test_get(self):
+        file = open('templates/index.html', 'r')
         middleware = []
         app = ta(application.wsgifunc(*middleware))
         resp = app.get('/dato')
         print(resp)
         assert resp.status == '200 OK'
-        assert resp.text == 'Hello, world!'
+        assert resp.text ==  file.read() + "\n"
 
 
     def test_post(self):
